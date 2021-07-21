@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
-import { APP_INTERCEPTOR } from '@nestjs/core';
-import { SentryInterceptor, SentryModule } from '@ntegral/nestjs-sentry';
+import { SentryModule } from '@ntegral/nestjs-sentry';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -14,7 +13,7 @@ import { AppService } from './app.service';
   controllers: [AppController],
   providers: [
     AppService,
-    { provide: APP_INTERCEPTOR, useClass: SentryInterceptor },
+    // { provide: APP_INTERCEPTOR, useClass: SentryInterceptor },
   ],
 })
 export class AppModule {}
